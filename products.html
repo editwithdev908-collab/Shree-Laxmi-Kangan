@@ -1,25 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products - Shree Laxmi Kangan & Cosmetics</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">💎 Shree Laxmi Kangan & Cosmetics</div>
+    <a class="whatsapp-btn" href="index.html">🏠 Home</a>
+</header>
+
 <section class="products">
 
-<h2>Our Products</h2>
+<h2>Shop Categories</h2>
 
-<div class="category-buttons">
+<div class="category-grid">
 
-<button onclick="showCategory('all')">All Products</button>
+<div class="card" onclick="showCategory('bangles')">
+💍 Bangles
+</div>
 
-<button onclick="showCategory('bangles')">Bangles</button>
+<div class="card" onclick="showCategory('cosmetics')">
+💄 Cosmetics
+</div>
 
-<button onclick="showCategory('cosmetics')">Cosmetics</button>
+<div class="card" onclick="showCategory('accessories')">
+👜 Accessories
+</div>
 
-<button onclick="showCategory('accessories')">Accessories</button>
+<div class="card" onclick="showCategory('jewellery')">
+👑 Jewellery
+</div>
 
-<button onclick="showCategory('jewellery')">Jewellery</button>
-
-<button onclick="showCategory('earrings')">Earrings</button>
+<div class="card" onclick="showCategory('earrings')">
+✨ Earrings
+</div>
 
 </div>
 
-<div id="product-container" class="product-grid">
+<h2 id="category-title">Bangles</h2>
 
-</div>
+<div id="product-container" class="product-grid"></div>
 
 </section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
