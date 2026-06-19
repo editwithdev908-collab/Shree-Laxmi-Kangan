@@ -1,93 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Laxmi Kangan & Cosmetics</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Laxmi Kangan & Cosmetics</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <div class="logo">💎 Shree Laxmi Kangan & Cosmetics</div>
-    <a class="whatsapp-btn" href="https://wa.me/918815940145" target="_blank">
-        Order on WhatsApp
-    </a>
+  <h1>Shree Laxmi Kangan & Cosmetics</h1>
 </header>
 
-<section class="hero">
-    <h1>Fashion Bangles, Jewellery & Cosmetics</h1>
-    <p>Latest Collection at Best Prices</p>
-</section>
+<!-- HOME -->
+<div id="home">
 
-<section class="categories">
-    <h2>Categories</h2>
+  <div class="categories">
 
-    <div class="category-grid">
-        <a href="products.html" class="card">💍 Bangles</a>
-        <a href="products.html" class="card">💄 Cosmetics</a>
-        <a href="products.html" class="card">👜 Accessories</a>
-        <a href="products.html" class="card">👑 Jewellery</a>
-        <a href="products.html" class="card">✨ Earrings</a>
-    </div>
-</section>
+    <div class="category" data-category="kangan">Kangan</div>
+    <div class="category" data-category="earrings">Earrings</div>
+    <div class="category" data-category="bangles">Bangles</div>
+    <div class="category" data-category="cosmetics">Cosmetics</div>
 
-<section class="products">
-    <h2>Featured Products</h2>
+  </div>
 
-    <div class="product-grid">
+</div>
 
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="">
-            <h3>Bridal Bangles Set</h3>
-            <p>₹499</p>
-            <button onclick="orderProduct('Bridal Bangles Set')">Order Now</button>
-        </div>
+<!-- PRODUCTS -->
+<div id="products" style="display:none;">
 
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600" alt="">
-            <h3>Premium Lipstick</h3>
-            <p>₹299</p>
-            <button onclick="orderProduct('Premium Lipstick')">Order Now</button>
-        </div>
+  <button id="backBtn">⬅ Back</button>
 
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="">
-            <h3>Designer Earrings</h3>
-            <p>₹199</p>
-            <button onclick="orderProduct('Designer Earrings')">Order Now</button>
-        </div>
+  <h2 id="categoryTitle"></h2>
 
-    </div>
-</section>
+  <div id="productList"></div>
 
-<section class="reviews">
-    <h2>Customer Reviews</h2>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐ Priya Sharma - Excellent Quality
-    </div>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐ Neha Verma - Beautiful Collection
-    </div>
-
-    <div class="review">
-        ⭐⭐⭐⭐⭐ Pooja Gupta - Trusted Shop
-    </div>
-</section>
-
-<footer>
-    <h3>Contact</h3>
-    <p>📞 8815940145</p>
-
-    <h3>Terms & Conditions</h3>
-    <p>Product availability may vary.</p>
-
-    <p>© 2026 Shree Laxmi Kangan & Cosmetics</p>
-</footer>
+</div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
