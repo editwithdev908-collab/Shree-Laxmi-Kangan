@@ -154,3 +154,29 @@ a.card{
     color:black;
     display:block;
 }
+
+.category-card{
+    text-decoration:none;
+    color:black;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
+}
+
+.category-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.category-card h3{
+    padding:20px;
+    font-size:24px;
+    text-align:center;
+}
