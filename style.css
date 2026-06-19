@@ -148,3 +148,9 @@ footer{
 footer h3{
     margin-top:15px;
 }
+
+a.card{
+    text-decoration:none;
+    color:black;
+    display:block;
+}
