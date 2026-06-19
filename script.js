@@ -1,74 +1,63 @@
-function orderProduct(productName){
+const data = {
+  kangan: [
+    {name:"Gold Kangan", img:"https://via.placeholder.com/300", price:500},
+    {name:"Silver Kangan", img:"https://via.placeholder.com/300", price:300}
+  ],
+  earrings: [
+    {name:"Stud Earrings", img:"https://via.placeholder.com/300", price:150},
+    {name:"Party Earrings", img:"https://via.placeholder.com/300", price:250}
+  ],
+  bangles: [
+    {name:"Glass Bangles", img:"https://via.placeholder.com/300", price:100}
+  ],
+  cosmetics: [
+    {name:"Lipstick", img:"https://via.placeholder.com/300", price:200}
+  ]
+};
 
-const phone = "918815940145";
-
-const message =
-"Namaste, mujhe ye product order karna hai: " + product price + productName;
-
-window.open(
-"https://wa.me/" + phone +
-"?text=" +
-encodeURIComponent(message)
-);
-
-}
-
-const products = [
-
-{name:"Bridal Bangles",price:"499",category:"bangles"},
-{name:"Fancy Bangles",price:"299",category:"bangles"},
-{name:"Glass Bangles",price:"199",category:"bangles"},
-
-{name:"Lipstick",price:"149",category:"cosmetics"},
-{name:"Kajal",price:"99",category:"cosmetics"},
-{name:"Perfume",price:"399",category:"cosmetics"},
-
-{name:"Hair Clip",price:"49",category:"accessories"},
-{name:"Hair Band",price:"79",category:"accessories"},
-
-{name:"Necklace Set",price:"799",category:"jewellery"},
-{name:"Ring Set",price:"299",category:"jewellery"},
-
-{name:"Designer Earrings",price:"249",category:"earrings"},
-{name:"Party Earrings",price:"349",category:"earrings"}
-
-];
-
-function showCategory(category){
-
-document.getElementById("category-title").innerHTML =
-category.toUpperCase();
-
-let html = "";
-
-products.forEach(product=>{
-
-if(product.category===category){
-
-html += `
-
-<div class="product">
-
-<img src="https://picsum.photos/300?random=${Math.random()}">
-
-<h3>${product.name}</h3>
-
-<p>₹${product.price}</p>
-
-<button onclick="orderProduct('${product.name}')">
-Order Now
-</button>
-
-</div>
-`;
-
-}
-
+// CATEGORY CLICK
+document.querySelectorAll(".category").forEach(btn=>{
+  btn.addEventListener("click",function(e){
+    e.preventDefault();
+    showProducts(this.dataset.category);
+  });
 });
 
-document.getElementById("product-container").innerHTML =
-html;
+// SHOW PRODUCTS
+function showProducts(cat){
 
+  document.getElementById("home").style.display="none";
+  document.getElementById("products").style.display="block";
+
+  document.getElementById("categoryTitle").innerText=cat.toUpperCase();
+
+  const list=document.getElementById("productList");
+  list.innerHTML="";
+
+  data[cat].forEach(p=>{
+    const div=document.createElement("div");
+    div.className="product";
+
+    div.innerHTML=`
+      <img src="${p.img}">
+      <h3>${p.name}</h3>
+      <p>₹${p.price}</p>
+      <button class="buy-btn" onclick="order('${p.name}')">Order on WhatsApp</button>
+    `;
+
+    list.appendChild(div);
+  });
 }
 
-showCategory("bangles");
+// BACK BUTTON
+document.getElementById("backBtn").addEventListener("click",()=>{
+  document.getElementById("products").style.display="none";
+  document.getElementById("home").style.display="block";
+});
+
+// WHATSAPP ORDER
+function order(product){
+  const phone="918815940145"; // apna number
+  const msg=`Hello, I want to order: ${product}`;
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank");
+}
