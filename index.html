@@ -1,29 +1,93 @@
-Mujhe Meri dukaan se Lakshmi kangan and cosmetics ke liye ek online website banani hai 
-Jo bilkul free bane or bilkul free run ho 
-Whatsapp order button ho ye number pe ( 8815940145 )
-Usne mujhe yah retirement hai 
-1. Unique home page 
-Example:- 
-[ Logo.  Shop  coustomer]
-[.              Name     profile  ]
-[ Background me fancy   ]
-[.  Bangle , cosmetic [ product.                             ]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Laxmi Kangan & Cosmetics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-Categories 1. Bangles 
-2. Cosmetics 
-3. Asoseries 
-4. Jwellery 
-5. Earrings 
+<header>
+    <div class="logo">💎 Shree Laxmi Kangan & Cosmetics</div>
+    <a class="whatsapp-btn" href="https://wa.me/918815940145" target="_blank">
+        Order on WhatsApp
+    </a>
+</header>
 
-Har category me apne apne alag alag product hona chaiye 
-Home page pe 3 product ho only category ke niche or product click krne ke bad open ho 
+<section class="hero">
+    <h1>Fashion Bangles, Jewellery & Cosmetics</h1>
+    <p>Latest Collection at Best Prices</p>
+</section>
 
-Niche side 
-1. Terms & conditions ho 
-2. Indian name se 2/3 reviews ho
-3. Contact hona chaiye
-4. Shop name hona chaiye 
+<section class="categories">
+    <h2>Categories</h2>
 
-Ab 2nd page pe jab apn category pe click karege tab vha har product ke niche add to Cart ka option ho or order now ka option ho jispe click kre to whatsapp pe order aajaye 
+    <div class="category-grid">
+        <div class="card">💍 Bangles</div>
+        <div class="card">💄 Cosmetics</div>
+        <div class="card">👜 Accessories</div>
+        <div class="card">👑 Jewellery</div>
+        <div class="card">✨ Earrings</div>
+    </div>
+</section>
 
-Image full profesional lagna chaiye
+<section class="products">
+    <h2>Featured Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="">
+            <h3>Bridal Bangles Set</h3>
+            <p>₹499</p>
+            <button onclick="orderProduct('Bridal Bangles Set')">Order Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600" alt="">
+            <h3>Premium Lipstick</h3>
+            <p>₹299</p>
+            <button onclick="orderProduct('Premium Lipstick')">Order Now</button>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=600" alt="">
+            <h3>Designer Earrings</h3>
+            <p>₹199</p>
+            <button onclick="orderProduct('Designer Earrings')">Order Now</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="reviews">
+    <h2>Customer Reviews</h2>
+
+    <div class="review">
+        ⭐⭐⭐⭐⭐ Priya Sharma - Excellent Quality
+    </div>
+
+    <div class="review">
+        ⭐⭐⭐⭐⭐ Neha Verma - Beautiful Collection
+    </div>
+
+    <div class="review">
+        ⭐⭐⭐⭐⭐ Pooja Gupta - Trusted Shop
+    </div>
+</section>
+
+<footer>
+    <h3>Contact</h3>
+    <p>📞 8815940145</p>
+
+    <h3>Terms & Conditions</h3>
+    <p>Product availability may vary.</p>
+
+    <p>© 2026 Shree Laxmi Kangan & Cosmetics</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
