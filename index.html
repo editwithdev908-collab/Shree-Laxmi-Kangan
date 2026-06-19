@@ -1,101 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>Shree Laxmi Kangan & Cosmetics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shree Laxmi Kangan</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">💎 Shree Laxmi Kangan & Cosmetics</div>
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="logo">💎 Laxmi Kangan</div>
 
-  <nav>
-    <a href="#">Home</a>
-    <a href="#categories">Category</a>
-    <a href="#contact">Contact</a>
-    <a href="products.html?cat=bangles">Shop</a>
-  </nav>
+  <input type="text" placeholder="Search products..." id="searchBar">
+
+  <a href="products.html" class="cartBtn">🛒 Cart</a>
 </header>
 
-<!-- BG HERO (PINK LIGHT DARK MIX) -->
-<section class="hero">
-  <h1>Premium Bangles & Jewellery Store</h1>
-  <p>Best Quality | Low Price | WhatsApp Order</p>
-</section>
-
-<!-- RULER LINE -->
-<hr>
-
-<!-- CATEGORIES TITLE -->
-<h2 style="text-align:center;">Categories</h2>
-
-<hr>
-
-<!-- CATEGORY LIST (BLUEPRINT STYLE) -->
-<section id="categories">
-
-<!-- 1 -->
-<div class="cat-box">
-  <h3>1. Bangles</h3>
-  <p>1. Gold Bangles | 2. Bridal Bangles | 3. Lakh Bangles</p>
-  <a href="products.html?cat=bangles">Click for more !</a>
+<!-- SLIDER -->
+<div class="slider">
+  <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f">
 </div>
 
-<hr>
-
-<!-- 2 -->
-<div class="cat-box">
-  <h3>2. Jewellery</h3>
-  <p>1. Bridal Jewellery | 2. Rajputi Jewellery | 3. Indian Jewellery</p>
-  <a href="products.html?cat=jewellery">Click for more !</a>
+<!-- CATEGORY LINE -->
+<div class="categoryLine">
+  Bangles | Jewellery | Accessories | Cosmetics
 </div>
 
-<hr>
+<!-- PRODUCT LIST (HOME PAGE) -->
+<div id="homeProducts"></div>
 
-<!-- 3 -->
-<div class="cat-box">
-  <h3>3. Accessories</h3>
-  <p>Hair Clips | Rings | Chains</p>
-  <a href="products.html?cat=accessory">Click for more !</a>
-</div>
-
-<hr>
-
-<!-- 4 -->
-<div class="cat-box">
-  <h3>4. Cosmetics</h3>
-  <p>Lipstick | Cream | Powder</p>
-  <a href="products.html?cat=cosmetics">Click for more !</a>
-</div>
-
-<hr>
-
-<!-- 5 -->
-<div class="cat-box">
-  <h3>5. New Arrivals</h3>
-  <p>Latest Trending Products</p>
-  <a href="products.html?cat=new">Click for more !</a>
-</div>
-
-</section>
-
-<hr>
-
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📞 8815940145</p>
-</section>
-
-<!-- PRIVACY -->
-<footer>
-  <h3>Privacy Policy</h3>
-  <p>
-    We respect customer privacy. Orders are processed via WhatsApp only.
-  </p>
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
