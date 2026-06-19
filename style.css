@@ -180,3 +180,17 @@ a.card{
     font-size:24px;
     text-align:center;
 }
+
+.category-buttons{
+text-align:center;
+margin:20px;
+}
+
+.category-buttons button{
+padding:12px 20px;
+margin:5px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+}
