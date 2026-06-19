@@ -1,63 +1,90 @@
-const data = {
-  kangan: [
-    {name:"Gold Kangan", img:"https://via.placeholder.com/300", price:500},
-    {name:"Silver Kangan", img:"https://via.placeholder.com/300", price:300}
-  ],
-  earrings: [
-    {name:"Stud Earrings", img:"https://via.placeholder.com/300", price:150},
-    {name:"Party Earrings", img:"https://via.placeholder.com/300", price:250}
-  ],
+const products = {
   bangles: [
-    {name:"Glass Bangles", img:"https://via.placeholder.com/300", price:100}
+    {name:"Gold Bangles", price:500},
+    {name:"Bridal Bangles", price:1200},
+    {name:"Lakh Bangles", price:300},
+    {name:"Designer Bangles", price:800},
+    {name:"Silk Bangles", price:400}
   ],
+
+  jewellery: [
+    {name:"Bridal Jewellery", price:2500},
+    {name:"Rajputi Jewellery", price:3000},
+    {name:"Indian Jewellery", price:1800}
+  ],
+
+  accessory: [
+    {name:"Hair Clip", price:50},
+    {name:"Ring", price:100},
+    {name:"Chain", price:200}
+  ],
+
   cosmetics: [
-    {name:"Lipstick", img:"https://via.placeholder.com/300", price:200}
+    {name:"Lipstick", price:200},
+    {name:"Cream", price:150},
+    {name:"Powder", price:100}
+  ],
+
+  new: [
+    {name:"New Product 1", price:500},
+    {name:"New Product 2", price:600}
   ]
 };
 
-// CATEGORY CLICK
-document.querySelectorAll(".category").forEach(btn=>{
-  btn.addEventListener("click",function(e){
-    e.preventDefault();
-    showProducts(this.dataset.category);
-  });
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const urlParams = new URLSearchParams(window.location.search);
+const cat = urlParams.get("cat");
+
+document.getElementById("title").innerText = cat.toUpperCase();
+
+const list = document.getElementById("productList");
+
+products[cat].forEach(p=>{
+  const div = document.createElement("div");
+  div.className = "product";
+
+  div.innerHTML = `
+    <h3>${p.name}</h3>
+    <p>₹${p.price}</p>
+    <button onclick="addToCart('${p.name}',${p.price})">Add to Cart</button>
+  `;
+
+  list.appendChild(div);
 });
 
-// SHOW PRODUCTS
-function showProducts(cat){
-
-  document.getElementById("home").style.display="none";
-  document.getElementById("products").style.display="block";
-
-  document.getElementById("categoryTitle").innerText=cat.toUpperCase();
-
-  const list=document.getElementById("productList");
-  list.innerHTML="";
-
-  data[cat].forEach(p=>{
-    const div=document.createElement("div");
-    div.className="product";
-
-    div.innerHTML=`
-      <img src="${p.img}">
-      <h3>${p.name}</h3>
-      <p>₹${p.price}</p>
-      <button class="buy-btn" onclick="order('${p.name}')">Order on WhatsApp</button>
-    `;
-
-    list.appendChild(div);
-  });
+function addToCart(name,price){
+  cart.push({name,price});
+  localStorage.setItem("cart",JSON.stringify(cart));
+  renderCart();
 }
 
-// BACK BUTTON
-document.getElementById("backBtn").addEventListener("click",()=>{
-  document.getElementById("products").style.display="none";
-  document.getElementById("home").style.display="block";
-});
+function renderCart(){
+  const box = document.getElementById("cartItems");
+  box.innerHTML = "";
 
-// WHATSAPP ORDER
-function order(product){
-  const phone="918815940145"; // apna number
-  const msg=`Hello, I want to order: ${product}`;
-  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`,"_blank");
+  let total = 0;
+
+  cart.forEach(c=>{
+    total += c.price;
+    box.innerHTML += `✔ ${c.name} - ₹${c.price}<br>`;
+  });
+
+  box.innerHTML += `<hr><b>Total: ₹${total}</b>`;
+}
+
+renderCart();
+
+function sendWhatsApp(){
+  let msg = "🛍 ORDER:\n\n";
+  let total = 0;
+
+  cart.forEach(c=>{
+    msg += `${c.name} - ₹${c.price}\n`;
+    total += c.price;
+  });
+
+  msg += `\nTOTAL: ₹${total}`;
+
+  window.open(`https://wa.me/918815940145?text=${encodeURIComponent(msg)}`);
 }
