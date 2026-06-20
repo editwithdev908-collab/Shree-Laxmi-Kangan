@@ -1,44 +1,138 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<title>Shop Products</title><link rel="stylesheet" href="style.css"><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head><body><header class="topbar"><a href="index.html" style="text-decoration:none;color:#2D2D2D;">
+⬅ Home
+</a><input
+type="text"
+id="searchBar"
+placeholder="Search Product..."
 
-<body>
+«»
 
-<!-- HEADER -->
-<header class="topbar">
-  <a href="index.html">⬅ Back</a>
+<div class="headerIcons">
+<span>🛒 Cart</span>
+</div></header><section class="categories"><h2>Shop Products</h2><div class="categoryGrid"><button onclick="filterCategory('all')" class="categoryCard">
+All
+</button><button onclick="filterCategory('bangles')" class="categoryCard">
+Bangles
+</button><button onclick="filterCategory('cosmetics')" class="categoryCard">
+Cosmetics
+</button><button onclick="filterCategory('accessories')" class="categoryCard">
+Accessories
+</button><button onclick="filterCategory('jewellery')" class="categoryCard">
+Jewellery
+</button><button onclick="filterCategory('earrings')" class="categoryCard">
+Earrings
+</button></div></section><section class="featured"><div id="products"></div></section><section id="cartBox"><h2>Your Cart</h2><div id="cartItems">
+No Products Added
+</div><br><button onclick="sendWhatsApp()">
+Order On WhatsApp
+</button></section><footer><h3>Contact Us</h3><p>📞 8815940145</p><p>Lakshmi Kangan & Cosmetics</p></footer><script src="script.js"></script><script>
 
-  <select id="sortBox">
-    <option value="default">Sort</option>
-    <option value="low">Low to High</option>
-    <option value="high">High to Low</option>
-  </select>
+function renderProducts(list){
 
-  <select id="filterBox">
-    <option value="all">Filter</option>
-    <option value="bangles">Bangles</option>
-    <option value="jewellery">Jewellery</option>
-    <option value="cosmetics">Cosmetics</option>
-  </select>
+const box = document.getElementById("products");
 
-  <a href="#" class="cartBtn">🛒 Cart</a>
-</header>
+box.innerHTML = "";
 
-<!-- PRODUCTS -->
-<div id="products"></div>
+list.forEach(product=>{
 
-<!-- CART -->
-<div id="cartBox">
-  <h3>Cart</h3>
-  <div id="cartItems"></div>
-  <button onclick="sendWhatsApp()">Order on WhatsApp</button>
+box.innerHTML += `
+
+<div class="card">
+
+<img src="${product.img}">
+
+<h3>${product.name}</h3>
+
+<p>₹${product.price}</p>
+
+<button onclick="addToCart(${product.id})">
+Add To Cart
+</button>
+
+<a
+href="https://wa.me/918815940145?text=Namaste,%20Mujhe%20${product.name}%20Order%20Karna%20Hai"
+target="_blank"
+class="whatsappBtn"
+style="display:block;margin-top:10px;"
+>
+Order Now
+</a>
+
 </div>
 
-<script src="script.js"></script>
-</body>
+`;
+
+});
+
+}
+
+renderProducts(data);
+
+function filterCategory(cat){
+
+if(cat==="all"){
+
+renderProducts(data);
+
+return;
+
+}
+
+renderProducts(
+data.filter(
+item=>item.cat===cat
+)
+);
+
+}
+
+function updateCart(){
+
+const cartItems =
+document.getElementById("cartItems");
+
+if(!cartItems) return;
+
+if(cart.length===0){
+
+cartItems.innerHTML =
+"No Products Added";
+
+return;
+
+}
+
+cartItems.innerHTML = "";
+
+let total = 0;
+
+cart.forEach(item=>{
+
+total += item.price;
+
+cartItems.innerHTML +=
+`
+<div>
+${item.name} - ₹${item.price}
+</div>
+`;
+
+});
+
+cartItems.innerHTML +=
+`
+<hr>
+<b>Total: ₹${total}</b>
+`;
+
+}
+
+updateCart();
+
+</script></body>
 </html>
