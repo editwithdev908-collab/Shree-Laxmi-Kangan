@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wishlist | Shree Laxmi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wishlist-empty-state {
+            display: none;
+        }
+        .wishlist-empty-state.active {
+            display: flex;
+        }
+        .wishlist-grid.hidden {
+            display: none;
+        }
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e3bdc3;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#f5f5ff",
+                      "surface-container-highest": "#e1e3e4",
+                      "error": "#ba1a1a",
+                      "tertiary": "#50586e",
+                      "surface-tint": "#bc004f",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#131b2e",
+                      "on-secondary-container": "#785a2e",
+                      "on-surface-variant": "#5a4044",
+                      "on-primary-fixed": "#3f0016",
+                      "inverse-on-surface": "#f0f1f2",
+                      "surface": "#f8f9fa",
+                      "surface-bright": "#f8f9fa",
+                      "inverse-surface": "#2e3132",
+                      "tertiary-container": "#687087",
+                      "surface-container": "#edeeef",
+                      "inverse-primary": "#ffb2bf",
+                      "on-secondary-fixed": "#291800",
+                      "background": "#f8f9fa",
+                      "outline": "#8e6f74",
+                      "secondary-fixed-dim": "#e8c08c",
+                      "on-secondary-fixed-variant": "#5d4219",
+                      "secondary-container": "#fdd39e",
+                      "on-background": "#191c1d",
+                      "on-surface": "#191c1d",
+                      "primary-fixed-dim": "#ffb2bf",
+                      "on-primary-fixed-variant": "#90003b",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "tertiary-fixed": "#dae2fd",
+                      "surface-container-high": "#e7e8e9",
+                      "surface-dim": "#d9dadb",
+                      "primary-fixed": "#ffd9de",
+                      "on-error-container": "#93000a",
+                      "outline-variant": "#e3bdc3",
+                      "primary": "#b0004a",
+                      "on-primary": "#ffffff",
+                      "secondary": "#77592e",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "on-primary-container": "#fff2f3",
+                      "surface-variant": "#e1e3e4",
+                      "surface-container-low": "#f3f4f5",
+                      "on-error": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#d81b60",
+                      "secondary-fixed": "#ffddb3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-padding": "1rem",
+                      "grid-gutter": "0.75rem",
+                      "stack-gap": "1.5rem",
+                      "section-margin": "2rem"
+              },
+              "fontFamily": {
+                      "price-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["DM Sans"],
+                      "body-base": ["Inter"],
+                      "display-lg-mobile": ["DM Sans"],
+                      "display-lg": ["DM Sans"],
+                      "label-bold": ["Inter"]
+              },
+              "fontSize": {
+                      "price-lg": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+                      "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-base min-h-screen pb-20">
+<!-- Top App Bar -->
+<header class="bg-on-surface dark:bg-on-background shadow-md flex justify-between items-center w-full px-container-padding h-16 fixed top-0 z-50">
+<div class="flex items-center gap-4">
+<button class="text-on-primary transition-opacity duration-200 hover:opacity-80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-on-primary">Shree Laxmi</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-primary transition-opacity duration-200 hover:opacity-80 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-container-padding max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-section-margin">
+<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-background mb-2">My Wishlist</h2>
+<p class="font-body-base text-body-base text-on-surface-variant">Manage your saved treasures and favorites.</p>
+</div>
+<!-- Empty Wishlist State (Hidden by default) -->
+<div class="wishlist-empty-state flex-col items-center justify-center py-20 text-center" id="empty-state">
+<div class="bg-surface-container-high w-24 h-24 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-4xl text-outline" style="font-variation-settings: 'wght' 200;">favorite</span>
+</div>
+<h3 class="font-headline-md text-headline-md-mobile text-on-surface mb-2">Your wishlist is empty</h3>
+<p class="font-body-base text-body-base text-on-surface-variant mb-8 max-w-xs mx-auto">Browse our exquisite collections of jewelry and cosmetics to find items you love.</p>
+<a class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold shadow-md hover:bg-primary-container transition-colors duration-200" href="categories.html">
+                Start Shopping
+            </a>
+</div>
+<!-- Wishlist Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-grid-gutter" id="wishlist-grid">
+<!-- Product Card 1 -->
+<div class="flex flex-col bg-surface border border-outline-variant/20 rounded-lg overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up high-resolution shot of a set of premium traditional Indian bridal bangles in vibrant Rose Petal red and gold filigree. The jewelry is presented on a minimalist soft champagne velvet surface with elegant side-lighting that highlights the intricate metallic textures and sparkling gemstones. The aesthetic is luxurious, clean, and modern light-mode retail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwu9K8-NQmKeS5YPu9u5TXIQC3UdCsraWeJ9K4rCv_nM6R0FNYd7ZDEVkNunna8YCqAMkVSbQSsZYgg0340BEoQ50a20uf2ylYEaSGo5MdCcOFott-ZBsC9udfH7DaVBY3dZp_LFN_ejHxj7FDtAuyfYZQtVPT2AInE3FdBUl57G7ZO5ROSXy3DRisUFqWhNLBurnx5O9KZeb9pjANbtM15CUt0tbGOggv017RA8V2nkqG-gucko5Fx7cUQX9-TjQb-lw9d6VGF_s"/>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-error hover:bg-error hover:text-on-error transition-all duration-200 remove-btn">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-full bg-secondary text-on-secondary py-2 rounded font-label-bold text-[12px] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<span class="text-[10px] font-label-bold text-outline uppercase tracking-wider">Bangles</span>
+<h4 class="font-label-bold text-label-bold text-on-background line-clamp-1">Bridal Gold Plated Set</h4>
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-price-lg text-primary">₹2,499</span>
+<span class="text-[12px] text-outline line-through">₹3,200</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col bg-surface border border-outline-variant/20 rounded-lg overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A professional studio product shot of a high-end matte liquid lipstick in a deep crimson shade, placed elegantly against a clean, off-white architectural background. The lighting is soft and directional, creating gentle shadows that emphasize the sleek, gold-capped packaging. The image exudes sophisticated modernism and premium quality, fitting a high-end cosmetic brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQh9jGgr6lmDmfRo4S4hY368klqDOAXSelgGSkxDUE7nyfBuP8dcdDE3v_WrEIqH_ST-WnJS-ylYrstHYXK2aX-KtWBARFEpx8RbWxDnrZWydFoXgnYg9e_eAa9gfmrIqSH65p8BW0kwLIolI-moNZq6syZg1eydKfH5ZOvvXNglJY9Vb3zIhRjW_VFAj3PDRt8kQmzqxxqoN6yX4FvPCVXyAhuRiQNZp33YwgB2ahDzq09yhsOvkIOjvzzxpEtwh-GM7ECPrZ4d4"/>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-error hover:bg-error hover:text-on-error transition-all duration-200 remove-btn">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-full bg-secondary text-on-secondary py-2 rounded font-label-bold text-[12px] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<span class="text-[10px] font-label-bold text-outline uppercase tracking-wider">Cosmetics</span>
+<h4 class="font-label-bold text-label-bold text-on-background line-clamp-1">Velvet Matte Crimson</h4>
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-price-lg text-primary">₹850</span>
+<span class="text-[12px] text-outline line-through">₹1,100</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col bg-surface border border-outline-variant/20 rounded-lg overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Exquisite silver necklace with a teardrop sapphire pendant, displayed on a minimalist white stone pedestal. The lighting is crisp and cool, creating sharp reflections on the polished silver chain. The composition is asymmetrical and artistic, reflecting a high-end jewelry boutique's visual language with a focus on elegance and premium craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcaARbQJnSl6awO8aHzmbbK8pXcJA_JUJ0nN_OQskxUNNwxidY70ffKNDzXpf0d0uLxTAGwhcUtrrJx_APPQTH6X6m_-EwbqlgA9wni8A1tVIEgW_CMs9sSMto_P9nqwFIstC0eyTesvn2TCEz2lF4FchywD-Or4hEYKLYnjNM1RRp0rOqpfSLBptCgBgryIuFsLdK8Lerf0eII3j5mWFtJqjXadiCEKfBUNKbWA7snFN8i-aU_Z0L73qJd5rewyntToX4KiqBt5k"/>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-error hover:bg-error hover:text-on-error transition-all duration-200 remove-btn">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-full bg-secondary text-on-secondary py-2 rounded font-label-bold text-[12px] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<span class="text-[10px] font-label-bold text-outline uppercase tracking-wider">Jewellery</span>
+<h4 class="font-label-bold text-label-bold text-on-background line-clamp-1">Sapphire Teardrop Pendant</h4>
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-price-lg text-primary">₹4,200</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col bg-surface border border-outline-variant/20 rounded-lg overflow-hidden group">
+<div class="relative aspect-[4/5] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A pair of intricately designed traditional jhumka earrings in gold with tiny pearl drops, hanging from an elegant minimalist wooden stand. The background is a soft beige with warm, glowing light that highlights the delicate metalwork. The mood is warm, inviting, and luxurious, capturing the essence of cultural heritage in a modern retail setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFHQv8-vUqIIMXiHizYq3FtgtsTWkUHRjPpzy-0tCaTRv76NnIF0Wsxef8Deea0UAiyCcbHQnrb98to7i3SSAaHBMDY9zxIA1V-BVaxcke_4giB0f4_aABx8UezhWv78tK0UzPHKOLi4qLKgcdInHJFWiJLQsVEsXH54cQV71uBj4KGwklizKN-yqWRyYa15DKJCQvaXELai0UDgmH_bj9Wiw7NhALLc_KsTq0grpEXdHiDY4l8RbHcCy7jC4VZyucBdPvxcZZtos"/>
+<button class="absolute top-2 right-2 w-8 h-8 rounded-full bg-surface/80 backdrop-blur-sm flex items-center justify-center text-error hover:bg-error hover:text-on-error transition-all duration-200 remove-btn">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+<div class="absolute bottom-0 left-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<button class="w-full bg-secondary text-on-secondary py-2 rounded font-label-bold text-[12px] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                            Add to Cart
+                        </button>
+</div>
+</div>
+<div class="p-3 flex flex-col gap-1">
+<span class="text-[10px] font-label-bold text-outline uppercase tracking-wider">Jewellery</span>
+<h4 class="font-label-bold text-label-bold text-on-background line-clamp-1">Traditional Pearl Jhumkas</h4>
+<div class="flex items-center gap-2">
+<span class="font-price-lg text-price-lg text-primary">₹1,850</span>
+<span class="text-[12px] text-outline line-through">₹2,100</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Collections (Upsell) -->
+<section class="mt-16 mb-8">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md-mobile text-on-background">Explore More</h3>
+<a class="text-primary font-label-bold text-label-bold flex items-center gap-1" href="#">View All <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A wide cinematic shot of a luxury jewelry showroom with minimalist display cases and warm ambient lighting. The atmosphere is quiet and premium, with blurred background textures of gold and silk. This serves as a sophisticated background for a collection promotional banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjf5L7-cdTCd6inaVomdABvoq-Mg1sCP7M5snZCJvSF09K0ZG6BqyBz8EO2C88TAsQPutjjWZ8gMYQksC8q8XDZ8Cv0QYPmmBhOiQrTgzmOdNUb_Y7vVrFl9LrXriXUKeC32RONeEFnyCqWBPGGscOkcR6NrxdBXPQPKifC4C9LxZucWMLQ9nSMHlCwFwaav2zrb_pu_BqiiSb93qL6sLibb64kdj0cCuG9iDPki0r3vCyoO0WMrmZvqwdcrhDEI6jyuC67v045js"/>
+<div class="relative z-20 h-full flex flex-col justify-center p-8">
+<h4 class="font-headline-md text-on-primary mb-2">Festive Collection</h4>
+<p class="text-on-primary/80 font-body-sm text-body-sm max-w-[200px]">Up to 30% off on all bridal jewellery sets.</p>
+</div>
+</div>
+<div class="relative h-48 rounded-xl overflow-hidden group cursor-pointer">
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 to-transparent z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A macro photograph of high-end cosmetic powders and brushes arranged on a pristine marble surface. The lighting is bright and ethereal, highlighting the fine texture of the products. The aesthetic is clean, professional, and reflects a modern retail brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd9hJNfnngfe2xYtixn-SzJp0oNYQxZ38L9EpUe31QQ4M1NfmhDIMiW9mfMCw4rQgq4zzY098Jnuwyf6SQxw_R4qOsM3raaRz-k8vR3NcJIsOdK8u2oBOAKfRoTqSnFu8L5TK1ofERtjgmuKx3FIMvwnX3XeyHTqHyUs83Kosl70cSNdctAXJJ-nZjRd_D_4QQtvaEnoM5a0MOWxOGWdWca5SBSD6wCy99sbCZ150kXPpYck0HTQaJCQEKLCXY_OTDkyj6exPKsno"/>
+<div class="relative z-20 h-full flex flex-col justify-center p-8">
+<h4 class="font-headline-md text-on-primary mb-2">New Cosmetics</h4>
+<p class="text-on-primary/80 font-body-sm text-body-sm max-w-[200px]">Experience luxury skin-care and organic makeup.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 bg-on-surface dark:bg-on-background border-t border-outline-variant/20 dark:border-outline-variant/10 shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-primary/60 dark:text-on-surface-variant hover:text-on-primary" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-bold text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-primary/60 dark:text-on-surface-variant hover:text-on-primary" href="category.html">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-bold text-[10px]">Category</span>
+</a>
+<a
