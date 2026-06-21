@@ -1,368 +1,58 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Shree Laxmi | Kangan &amp; Cosmetics</title>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Material Symbols -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "tertiary-fixed": "#dae2fd",
-                        "on-tertiary": "#ffffff",
-                        "tertiary-container": "#687087",
-                        "error": "#ba1a1a",
-                        "surface": "#f8f9fa",
-                        "outline": "#8e6f74",
-                        "on-primary": "#ffffff",
-                        "primary-fixed-dim": "#ffb2bf",
-                        "primary": "#b0004a",
-                        "tertiary-fixed-dim": "#bec6e0",
-                        "on-secondary": "#ffffff",
-                        "on-error": "#ffffff",
-                        "on-surface": "#191c1d",
-                        "on-tertiary-fixed": "#131b2e",
-                        "on-secondary-container": "#785a2e",
-                        "secondary-fixed-dim": "#e8c08c",
-                        "error-container": "#ffdad6",
-                        "surface-dim": "#d9dadb",
-                        "secondary": "#77592e",
-                        "inverse-on-surface": "#f0f1f2",
-                        "primary-fixed": "#ffd9de",
-                        "on-primary-container": "#fff2f3",
-                        "on-secondary-fixed-variant": "#5d4219",
-                        "tertiary": "#50586e",
-                        "on-background": "#191c1d",
-                        "on-surface-variant": "#5a4044",
-                        "secondary-fixed": "#ffddb3",
-                        "surface-container": "#edeeef",
-                        "inverse-surface": "#2e3132",
-                        "background": "#f8f9fa",
-                        "outline-variant": "#e3bdc3",
-                        "secondary-container": "#fdd39e",
-                        "on-tertiary-fixed-variant": "#3f465c",
-                        "inverse-primary": "#ffb2bf",
-                        "on-primary-fixed-variant": "#90003b",
-                        "surface-container-low": "#f3f4f5",
-                        "on-error-container": "#93000a",
-                        "surface-container-high": "#e7e8e9",
-                        "surface-bright": "#f8f9fa",
-                        "on-tertiary-container": "#f5f5ff",
-                        "surface-tint": "#bc004f",
-                        "surface-container-highest": "#e1e3e4",
-                        "surface-variant": "#e1e3e4",
-                        "primary-container": "#d81b60",
-                        "on-secondary-fixed": "#291800"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "grid-gutter": "0.75rem",
-                        "stack-gap": "1.5rem",
-                        "section-margin": "2rem",
-                        "container-padding": "1rem"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["DM Sans"],
-                        "display-lg-mobile": ["DM Sans"],
-                        "display-lg": ["DM Sans"],
-                        "body-sm": ["Inter"],
-                        "price-lg": ["Inter"],
-                        "label-bold": ["Inter"],
-                        "body-base": ["Inter"]
-                    },
-                    "fontSize": {
-                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                        "display-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
-                        "display-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
-                        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
-                        "price-lg": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
-                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
-                        "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
-                    }
-                },
-            },
-        }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .scrolling-wrapper::-webkit-scrollbar {
-            display: none;
-        }
-        .scrolling-wrapper {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
-<body class="bg-background text-on-background min-h-screen pb-20">
-<!-- Top AppBar -->
-<header class="sticky top-0 z-50 bg-on-surface dark:bg-on-background shadow-md h-16 px-4 flex justify-between items-center w-full">
-<div class="flex items-center gap-3">
-<button class="text-on-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity duration-200">
-<span class="material-symbols-outlined">menu</span>
-</button>
-<div class="flex flex-col">
-<h1 class="font-headline-md text-headline-md-mobile font-bold text-on-primary">Shree Laxmi</h1>
-<span class="text-[10px] text-on-primary/70 -mt-1 uppercase tracking-widest">Kangan &amp; Cosmetics</span>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<button class="text-on-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity duration-200">
-<span class="material-symbols-outlined">search</span>
-</button>
-<button class="text-on-primary dark:text-primary-fixed-dim relative hover:opacity-80 transition-opacity duration-200">
-<span class="material-symbols-outlined">shopping_cart</span>
-<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
-</button>
-</div>
-</header>
-<main class="max-w-5xl mx-auto">
-<!-- Hero Section -->
-<section class="relative h-[300px] md:h-[450px] overflow-hidden bg-primary-fixed">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" data-alt="A professional high-end product photography shot of exquisite gold and red traditional Indian bangles arranged artistically on a luxury silk fabric background. The lighting is soft and golden, highlighting the intricate craftsmanship and sparkling gemstones. The color palette features rich rubies, warm gold, and soft pink undertones, creating a sophisticated retail modernism aesthetic. The mood is opulent, elegant, and culturally rich." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKBWXpIYRE3VaJy51V0VLinmpNnKid7euWkGTZGmdPF1SaOdm6Bu6pdFGsBRCaciMV-4bSnbcmkyt96aShJIwiHpkY6e-z4GWFV8K7WLPi5YaDWzxWTZjQHuzX1y6MdUXo8tU-1W6yPXV5FhZazgfWhgfqILFeAV2fGEFegUiunHR-lGKYtfeP4bNXn6gwNoZA5ZjuvwMVdnlEkhXoDI7QSNdxkiI2y4TdS_NNmUxD2AjYt5NJB1J6XdxiL9h4K-AnsVqrn5omKAg"/>
-<div class="absolute inset-0 bg-gradient-to-r from-on-primary/40 to-transparent"></div>
-</div>
-<div class="relative z-10 h-full flex flex-col justify-center px-container-padding">
-<div class="max-w-xs space-y-4">
-<h2 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-primary-fixed drop-shadow-sm">Beautiful Bangles</h2>
-<div class="flex flex-col">
-<span class="text-body-sm font-body-sm text-primary uppercase tracking-wider font-bold">Latest Collection</span>
-<span class="text-body-base font-body-base text-on-surface-variant italic">For Every Occasion</span>
-</div>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-bold text-label-bold shadow-lg hover:scale-105 transition-transform">
-                        Shop Now
-                    </button>
-</div>
-</div>
-</section>
-<!-- Categories Section -->
-<section class="px-container-padding py-section-margin">
-<div class="flex items-center justify-center gap-4 mb-8">
-<div class="h-px w-12 bg-outline-variant"></div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-center uppercase tracking-widest">Categories</h3>
-<div class="h-px w-12 bg-outline-variant"></div>
-</div>
-<!-- Bento Grid style Categories -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-grid-gutter">
-<!-- Category Item 1: Bangles -->
-<div class="glass-card rounded-xl p-6 flex flex-col gap-4 group">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<span class="text-primary font-bold text-lg">01.</span>
-<h4 class="font-headline-md text-headline-md text-on-surface">Bangles</h4>
-<p class="text-body-sm text-on-surface-variant mt-1">Gold | Bridal | Lakh Bangles</p>
-</div>
-<button class="bg-primary-container/10 text-primary p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">arrow_forward_ios</span>
-</button>
-</div>
-<div class="grid grid-cols-3 gap-2 h-32">
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Close up of traditional Indian gold bangles with intricate filigree work, captured in soft morning light. The image emphasizes the rich texture of the gold against a light cream surface, maintaining the sophisticated retail modernism aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmTDD7NUC3boweSjDomD1cEr4cI2Ff7-oAkvfUmJKcCq90PfsfurF1FOCiJp0ZvxCvstSr3yXzDs69St7wyeJ4HmzvSTEhARzqeNvCsZeY-YP1jmM5hL-lmkSVLYr4ndnxoXv5gP5enzYn4kcAECJYJUjuQ0yd7AZJk8oUxI67yA2GBkQpEUNEjjdAtUDNf6Pd3HoUUxggJg1SFoFfP4TP5I_FyexeZltYQB7VFnlCQXEnRmlvSBTXeZEZKO0QWO5Ll0C-TOHF47s"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="A stack of vibrant red bridal bangles adorned with sparkling kundans, displayed on a minimalist white pedestal. The lighting is high-key and clean, highlighting the contrast between the deep red and the bright background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy6h_z_0J-REAZgIash-YNbHtbEX7XDL60LBV-oMBYwdVX0jUOci5YLuL0zQUlnLjZFcy4y7rRsfcSlphOqnYc2SCtRitGudpH1kd7GAiFuC2ZRqiFnCHzt77_6UN1IYRdlOjg0iRKAQpSnGmWqZEXqYHevjWC3-V6841czu7y0Rw4_1Bd2VN5FOXvgGXvVbQkdngCNEHVBXvq0yY-UtO5ftP7rowL2I4iftC6k_5xYzX0EJUzdIgw5ciw0seOQb3APx-MGMYBvJw"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Authentic Lakh bangles in traditional forest green and yellow patterns, showcasing hand-painted floral motifs. High-quality product photography with a shallow depth of field to draw focus to the delicate details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACyAs2QggqCco9-UOpYkZ6ibvi10DeCclIiQDwN-xUn262dAJSAQi7JxRrtsKJz9Mctun0Lc6MQtvtr9Ji2Kd86KJzmzHMVFzMrAYbDclwyCMWjHOzdkzKtjtJFsZR9owjfp8fGRvC1cqWH690JUDA5wRkqnzOtNe6-gn_ow54Y79qbrQY44mxkpHjo6ijDK6LsEr_AmcPkPtdjdp1ZUDWXGLLl6qov_eta2khZJ4j216A0k5GIDs-mgJ74cwJTwIS6-eeGds4pDg"/>
-</div>
-</div>
-</div>
-<!-- Category Item 2: Jewellery -->
-<div class="glass-card rounded-xl p-6 flex flex-col gap-4 group">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<span class="text-primary font-bold text-lg">02.</span>
-<h4 class="font-headline-md text-headline-md text-on-surface">Jewellery</h4>
-<p class="text-body-sm text-on-surface-variant mt-1">Bridal | Rajputi | Indian</p>
-</div>
-<button class="bg-primary-container/10 text-primary p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">arrow_forward_ios</span>
-</button>
-</div>
-<div class="grid grid-cols-3 gap-2 h-32">
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="An ornate bridal necklace set with heavy gold plating and emerald drops, lying flat on a luxurious velvet cloth. The image uses tonal layering with deep shadows to create a sense of premium quality and heritage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATLxFQk89B2GdC-ejYy_yHWp2fghFgNidtYfmPkz0ptx_pcfCjim00nuRKhzwkoTFS2SLlcJ-Tv693lLpQDlJxPowTupHqJHhO8uojyRLsr_7qBfELgiZxTgoPHoyLE-DCAdDSZrR300SC8jwFz6DlJCn35ylrT2ek9C0Qwm4obsXR5XgrkukgZzD6uu0tjV7O8mXlooNOsKXM2-UKBbubKRqD1FCBFGP8eDKRrm8pRIFz4BxIrZQCFP12M3SpOJh8ANx-UpWc8yo"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Traditional Rajputi Aad necklace with intricate pearl work and gold tassels, photographed against a neutral grey studio background. Clean, professional lighting for high-end commerce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMv-TaqKcKI1g-FmkDjvbwj_wustdkhkghPhB8edfn8ASArQohrnzZEH8h1rJZnbn5tVwX73tX1JGRlwl9Hwc4R47NxfmiWTxFG6y-QtbS21AnSoWNnj2Z2jv7nTkIzC3AzN7jtl2L1oMj7H21rUe8QKuLztGs0H6vLb3FgjPcbld7z9-ayR-i_EFQ2gmI83gywpQaoIqkbfmZCknxFUHKjIaF1krdAOchyGtAuw2leO_Htkem2pHjjG1eWQzr4k8LKv3XEnuovGY"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="A pair of elegant Indian Jhumka earrings featuring rubies and gold beads, hanging from a minimalist display stand. The overall style is modern and organized, emphasizing affordable luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrSskEkAwG1fqMllQbDbGw52LdCyJK-2Ctbh5OANwRWP9w41meMi2gUU2eT0rQ8jdBSjaXY3inDT-JSJ6ICaEx4VhChoyiwh46Ca18FzQblJ6bnEZiBMykFSGsEt47ce58wBWOEWTOj8oomv7aW8ziPXpIUivvdwW8NX9WgGeTdSo4UXI5fLM-C9Jj2KTQ0O2uGcWuI167TP6_GwNub30YkWZxoOXYuM5EQbV5gwwbCMJNGbQGN2AmicQaLPE-YhxcGmPNZns6-CA"/>
-</div>
-</div>
-</div>
-<!-- Category Item 3: Accessories -->
-<div class="glass-card rounded-xl p-6 flex flex-col gap-4 group">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<span class="text-primary font-bold text-lg">03.</span>
-<h4 class="font-headline-md text-headline-md text-on-surface">Accessories</h4>
-<p class="text-body-sm text-on-surface-variant mt-1">Hair Clips | Rings | Chains</p>
-</div>
-<button class="bg-primary-container/10 text-primary p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">arrow_forward_ios</span>
-</button>
-</div>
-<div class="grid grid-cols-3 gap-2 h-32">
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Stylish gold-toned hair clips with faux pearl embellishments, arranged neatly on a pastel pink background. The shot is bright and approachable, appealing to a trendy audience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGXIEXMWKmYUGCm9The5gjFwtqbTY2YiovExIvXj8ozDerePBmOeanKeLANXhiPbGo6Cg-aIh9Ghu_RjQtMDWT9O8JNGK6zFvdb2rWmtM1EyjYeZgBC9i_ZbsT0TFOEYOQkAI2Z695J19iJJbA8wWlqUOOFE04-zFZeaR1WOZrD3O5d1jvE7kQy-LFv2YW3zHPW9KLFvz0q_Z5WsiS33qEcStyHPh9ePOjzJXeX5pk5YvqeGWN5oeBsbUcK0T21uhk6KUkiJtjvpU"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="A collection of minimalist gold rings with small geometric designs, captured in a lifestyle flat lay on a marble surface. The lighting is natural and soft, creating a chic, modern feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3PLxy6SW3jTWEUTvzH2Io1lVWWO2STMGoQ_dby_TVFLdSihtbCa9rlGRxL9LmW6FMnSZi1QVOlDoXkqg7CP0KKMLnD8Tv_hZo69tZBNrgZ6XqVXTgVsu34jkjT7-4M7UAtaBeLh7_a7xcI24ouAKRIV6jmrw2K9FSdks_-rHwhw-F3j4MRAqehCJzilTQ8YOlqGIHsnREhm7IWODnOVJSBwBhOHthYBPiLICDEYzy5VkuIi1wE1r8IgCkVCgd_VyPB8VMdb9Eers"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Delicate gold chains with small heart pendants, draped over a soft fabric. High-contrast detail on the chain links to show the high-quality finish and material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCj3MeRuVnOBqEIQgQl-_z_znQuS8BueT7xoQ6wHzKJeUr8G--quFWs7l8IIIO3LaabiQaJr6uBxKuNN2TrHgdrl4mYg9NAj2xpnxdANpxJjvuRDJ0AeF2eN1GgYy_rl6_8Ni_Feq-Mt_kMRLjs4AFG2rHZ1EapfionYQo4wMwvUZxyoe9bBVEivkiAoP9vksOFbrwTImSe1VbRORMqgTAC7M9ijizfiMoDeG46oKrpr3vusactJKhTSK8ivPzHEcQkXPhDKir2EMs"/>
-</div>
-</div>
-</div>
-<!-- Category Item 4: Cosmetics -->
-<div class="glass-card rounded-xl p-6 flex flex-col gap-4 group">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<span class="text-primary font-bold text-lg">04.</span>
-<h4 class="font-headline-md text-headline-md text-on-surface">Cosmetics</h4>
-<p class="text-body-sm text-on-surface-variant mt-1">Lipstick | Cream | Powder</p>
-</div>
-<button class="bg-primary-container/10 text-primary p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-<span class="material-symbols-outlined">arrow_forward_ios</span>
-</button>
-</div>
-<div class="grid grid-cols-3 gap-2 h-32">
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="A range of vibrant rose-petal colored lipsticks with sleek black packaging, arranged in a diagonal line. The background is a clean white, emphasizing the product colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHlJ0tekYKqrmVYb_n90g0mYihiu6c6eCIaqrH4hhnLO2UPlJUh56ZItI7423YsVEn7Ge111INYczsctrgEW3WaBWC69vn4SDkPcWntZNYZzPdbuoMq6BxmP25v_fc4ogMqETZxDhgqu16wzo8FIJRJg7akadKye0mR8fwxI5hRGMQe8mq9ATWpiB4OmuEpt7D_TxJ_W-C7vhP4OxPdejG_LMHaLuQw1xaKIDrkvKFVDNdfO20Mtku1BuUWBKPLQtkZRCFgBFbSYw"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Luxury face cream jars with gold caps, shown with a swirl of cream next to them. Soft, ambient lighting creates a moisturizing, high-end feel for the personal care line." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6KeiC07Iqd3AsTdbuzKGkI43pRWDCg4IteifAVwJpZ2EL-gQ2QuwoWvFqgYIgiByDzA1IgX15xRKu2acS8wAnB58NUY_y9tlGPfO_ghDSw8D1IzHxZw1GU1q4D47WAxTiQdd2hE3lA42cDeU9Thl-XvmeX2KsYgzyMPTjALmtTu1u8cERhglZpGyPs-6ka6S2fjOKzFyKJxAW7XjzkvMB0ghMV25Fz5-LUzWv_0KRgueBY5vaQM5gOMDjv_tfddWs1LbV1CxIxdg"/>
-</div>
-<div class="rounded-lg overflow-hidden border border-outline-variant/30">
-<img class="w-full h-full object-cover" data-alt="Pressed powder compacts in various skin tones, opened to show the fine texture. The arrangement is clean and structured, reflecting the modernism of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs-0kV3EXqWvw_fYHisGbT_23Pw2p7aT0lzv_corpSbJ78rC_5sOwPE_2tnpBEcw9AxKCWzi_AWPgMM05G8DUn5fu3E-9vPhHRQkHQpgwjEVF_dIkexU56n_nYmoP7IwiuqG_anKZhyGSltfs1FjCNzgZ6vfw8u346rpTaoSqTLtz6XtPpLCyXaLSnyAyY8wApELnEDERjYcBiEtY7b0SiCN2y6b1BUc_rPuwcQiYX-xwqjeZKOQkg_RKjQmGF1lkVpAMr23G1zws"/>
-</div>
-</div>
-</div>
-</div>
-<!-- New Arrivals Banner -->
-<div class="mt-grid-gutter bg-on-surface text-on-primary rounded-xl overflow-hidden relative group">
-<div class="absolute inset-0 opacity-20">
-<img class="w-full h-full object-cover" data-alt="A sophisticated background pattern of traditional Indian paisley motifs rendered in a subtle, dark midnight ink color. The pattern is elegant and repetitive, providing a rich texture for the New Arrivals section." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2V9SsT6tznoTWRPdPFTlsrUsj5Tu_1uuvXKj77hSjC3PRlM9KV2NwjU0Oh8bdyJBhhKQ6AHTt4LOefJhbQJJL7fhDhYhWirqSwuJE4zv1_ZNcPzhLfAyZN1B2tkEXKsBUncYvfs2egRDfNi1bH9BMze86YceQd0y-ZuV0DZ6X2jBu5ozGgqq2U5GL6zOdhcRm3y-whB0ED1SqbnlTKKRckujLiHRdzTRD5UoSTrVgIsXNus6xcRX13rfjSvxuwFeXv20TGV6XDe4"/>
-</div>
-<div class="relative p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-<div class="flex flex-col text-center md:text-left">
-<span class="text-primary-fixed-dim font-bold uppercase tracking-widest text-sm">Just In</span>
-<h4 class="font-display-lg-mobile text-display-lg-mobile text-white mb-2">05. New Arrivals</h4>
-<p class="text-on-primary/70 font-body-base">Discover the latest trending products from our workshops.</p>
-</div>
-<button class="bg-primary-container text-on-primary-container px-10 py-3 rounded-full font-label-bold text-label-bold hover:bg-primary transition-colors flex items-center gap-2">
-                        See What's New
-                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</button>
-</div>
-</div>
-</section>
-<!-- Trust Badges / Footer Info -->
-<footer class="px-container-padding pb-section-margin pt-4 border-t border-outline-variant/20">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-<div class="flex flex-col gap-2">
-<h5 class="font-label-bold text-label-bold text-on-surface uppercase">Contact Us</h5>
-<div class="flex items-center gap-3 text-primary">
-<span class="material-symbols-outlined">call</span>
-<span class="font-headline-md text-headline-md tracking-tight">8815940145</span>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<h5 class="font-label-bold text-label-bold text-on-surface uppercase">Privacy Policy</h5>
-<p class="text-body-sm text-on-surface-variant leading-relaxed">
-                        We respect your privacy. Your information is safe with us. We never share your data with third parties.
-                    </p>
-</div>
-</div>
-<div class="bg-on-surface py-3 px-4 rounded-lg flex flex-col md:flex-row justify-between items-center text-on-primary/60 text-[10px] uppercase tracking-widest gap-2">
-<span>© 2024 Shree Laxmi Kangan &amp; Cosmetics</span>
-<div class="flex gap-4">
-<a class="hover:text-primary transition-colors" href="#">Terms</a>
-<a class="hover:text-primary transition-colors" href="#">Shipping</a>
-<a class="hover:text-primary transition-colors" href="#">Returns</a>
-</div>
-</div>
-</footer>
-</main>
-<!-- Bottom NavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-2 bg-on-surface dark:bg-on-background border-t border-outline-variant/20">
-<a class="flex flex-col items-center justify-center text-primary-fixed-dim dark:text-primary-fixed font-bold" href="#">
-<span class="material-symbols-outlined" data-weight="fill">home</span>
-<span class="text-[10px] font-label-bold">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-primary/60 dark:text-on-surface-variant hover:text-on-primary" href="#">
-<span class="material-symbols-outlined">grid_view</span>
-<span class="text-[10px] font-label-bold">Category</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-primary/60 dark:text-on-surface-variant hover:text-on-primary" href="#">
-<span class="material-symbols-outlined">chat</span>
-<span class="text-[10px] font-label-bold">Contact</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-primary/60 dark:text-on-surface-variant hover:text-on-primary" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="text-[10px] font-label-bold">Profile</span>
-</a>
-</nav>
-<!-- Contextual FAB (Only for main screens) -->
-<button class="fixed bottom-20 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center group active:scale-95 transition-transform">
-<span class="flex items-center gap-2">
-<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.887-11.891 3.181 0 6.167 1.24 8.413 3.488 2.246 2.248 3.481 5.231 3.481 8.401 0 6.557-5.332 11.892-11.887 11.892-2.01 0-3.991-.51-5.759-1.478l-6.234 1.638zm6.402-17.18c-.201-.448-.411-.457-.601-.465-.155-.007-.334-.007-.513-.007-.179 0-.469.067-.714.334-.245.267-.936.913-.936 2.226s.958 2.583 1.092 2.761c.134.178 1.885 2.878 4.566 4.037.637.276 1.135.441 1.524.565.641.204 1.222.175 1.682.107.513-.077 1.573-.642 1.796-1.261.223-.619.223-1.15.156-1.261-.067-.112-.245-.178-.513-.312s-1.573-.775-1.818-.864c-.245-.089-.423-.134-.601.134-.179.267-.691.864-.847 1.042-.156.178-.312.2-.58.067-.268-.134-1.13-.417-2.152-1.328-.795-.709-1.332-1.584-1.488-1.85-.156-.267-.017-.411.117-.544.121-.12.268-.312.401-.467.134-.156.179-.267.268-.445.089-.178.045-.334-.022-.467-.067-.134-.582-1.403-.797-1.921z"></path></svg>
-<span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap font-label-bold">Order on WhatsApp</span>
-</span>
-</button>
 <script>
-        // Simple Interaction Logic
-        document.querySelectorAll('button, a').forEach(elem => {
-            elem.addEventListener('mousedown', () => {
-                elem.classList.add('scale-95');
-            });
-            elem.addEventListener('mouseup', () => {
-                elem.classList.remove('scale-95');
-            });
-            elem.addEventListener('mouseleave', () => {
-                elem.classList.remove('scale-95');
-            });
-        });
+document.addEventListener("DOMContentLoaded", function () {
 
-        // Hover animations for category cards
-        const cards = document.querySelectorAll('.glass-card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.classList.add('shadow-xl', '-translate-y-1');
-                card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.classList.remove('shadow-xl', '-translate-y-1');
-            });
-        });
-    </script>
-</body></html>
+  // Menu Button
+  const menuBtn = document.querySelector("header button");
+  if(menuBtn){
+    menuBtn.addEventListener("click", function(){
+      alert("Menu Opened");
+    });
+  }
+
+  // Search Button
+  const searchBtn = document.querySelectorAll("header button")[1];
+  if(searchBtn){
+    searchBtn.addEventListener("click", function(){
+      const search = prompt("Search Product:");
+      if(search){
+        alert("Searching for: " + search);
+      }
+    });
+  }
+
+  // Cart Button
+  const cartBtn = document.querySelectorAll("header button")[2];
+  if(cartBtn){
+    cartBtn.addEventListener("click", function(){
+      alert("Cart Opened");
+    });
+  }
+
+  // Shop Now Button
+  const shopBtn = document.querySelector("section button");
+  if(shopBtn){
+    shopBtn.addEventListener("click", function(){
+      alert("Welcome to Shop");
+    });
+  }
+
+  // Category Arrow Buttons
+  const categoryBtns = document.querySelectorAll(
+    ".group button"
+  );
+
+  categoryBtns.forEach((btn, index) => {
+    btn.addEventListener("click", function(){
+      const categories = [
+        "Bangles",
+        "Jewellery",
+        "Accessories",
+        "Cosmetics"
+      ];
+
+      alert("Opening " + categories[index] + " Category");
+    });
+  });
+
+});
+</script>
