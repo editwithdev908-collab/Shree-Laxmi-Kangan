@@ -8,7 +8,65 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Menu Opened");
     });
   }
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  // Menu Button
+  const menuBtn = document.querySelector("header button");
+  if(menuBtn){
+    menuBtn.addEventListener("click", function(){
+      alert("Menu Opened");
+    });
+  }
+
+  // Search Button
+  const searchBtn = document.querySelectorAll("header button")[1];
+  if(searchBtn){
+    searchBtn.addEventListener("click", function(){
+      const search = prompt("Search Product:");
+      if(search){
+        alert("Searching for: " + search);
+      }
+    });
+  }
+
+  // Cart Button
+  const cartBtn = document.querySelectorAll("header button")[2];
+  if(cartBtn){
+    cartBtn.addEventListener("click", function(){
+      alert("Cart Opened");
+    });
+  }
+
+  // Shop Now Button
+  const shopBtn = document.querySelector("section button");
+  if(shopBtn){
+    shopBtn.addEventListener("click", function(){
+      alert("Welcome to Shop");
+    });
+  }
+
+  // Category Arrow Buttons
+  const categoryBtns = document.querySelectorAll(
+    ".group button"
+  );
+
+  categoryBtns.forEach((btn, index) => {
+    btn.addEventListener("click", function(){
+      const categories = [
+        "Bangles",
+        "Jewellery",
+        "Accessories",
+        "Cosmetics"
+      ];
+
+      alert("Opening " + categories[index] + " Category");
+    });
+  });
+
+});
+</script>
   // Search Button
   const searchBtn = document.querySelectorAll("header button")[1];
   if(searchBtn){
